@@ -7,6 +7,7 @@ import ru.guru.di.controllers.ConstructorInjectedController;
 import ru.guru.di.controllers.MyController;
 import ru.guru.di.controllers.PropertyInjectedController;
 import ru.guru.di.controllers.SetterInjectedController;
+import ru.guru.di.services.HelloService;
 
 @SpringBootApplication
 public class DiApplication {

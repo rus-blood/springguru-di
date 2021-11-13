@@ -15,6 +15,7 @@ public class SetterInjectedController {
     }
 
     public String getHello() {
+        helloService.addSuffix("SetterInjectedController");
         return helloService.sayHello();
     }
 }

@@ -11,6 +11,7 @@ public class PropertyInjectedController {
     public HelloService helloService;
 
     public String getHello() {
+        helloService.addSuffix("PropertyInjectedController");
         return helloService.sayHello();
     }
 }

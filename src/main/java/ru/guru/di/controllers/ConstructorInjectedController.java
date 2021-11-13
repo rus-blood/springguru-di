@@ -14,6 +14,7 @@ public class ConstructorInjectedController {
     }
 
     public String getHello(){
+        helloService.addSuffix("ConstructorInjectedController");
         return helloService.sayHello();
     }
 }
