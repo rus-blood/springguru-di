@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service("i18n")
-@Profile("EN")
+@Profile({"EN", "default"})
 public class EnglishHelloServiceImpl implements HelloService {
 
     String suffix;
