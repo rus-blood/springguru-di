@@ -1,12 +1,20 @@
 package ru.guru.di.controllers;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
+import ru.guru.di.services.HelloService;
 
 @Controller
 public class MyController {
 
+    private final HelloService helloService;
+
+    public MyController(HelloService helloService) {
+        this.helloService = helloService;
+    }
+
     public String sayHello() {
-        System.out.println("Hello, World!");
-        return "Hi, folks!";
+        helloService.addSuffix("MyController");
+        return helloService.sayHello();
     }
 }

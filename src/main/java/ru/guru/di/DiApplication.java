@@ -14,6 +14,8 @@ public class DiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DiApplication.class, args);
+
+		System.out.println("-------- Primary");
 		MyController myController = (MyController) ctx.getBean("myController");
 		String text = myController.sayHello();
 		System.out.println(text);
