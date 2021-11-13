@@ -3,11 +3,7 @@ package ru.guru.di;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import ru.guru.di.controllers.ConstructorInjectedController;
-import ru.guru.di.controllers.MyController;
-import ru.guru.di.controllers.PropertyInjectedController;
-import ru.guru.di.controllers.SetterInjectedController;
-import ru.guru.di.services.HelloService;
+import ru.guru.di.controllers.*;
 
 @SpringBootApplication
 public class DiApplication {
@@ -15,10 +11,13 @@ public class DiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DiApplication.class, args);
 
+		System.out.println("-------- i18n");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
+
 		System.out.println("-------- Primary");
 		MyController myController = (MyController) ctx.getBean("myController");
-		String text = myController.sayHello();
-		System.out.println(text);
+		System.out.println(myController.sayHello());
 
 		System.out.println("-------- Property");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");

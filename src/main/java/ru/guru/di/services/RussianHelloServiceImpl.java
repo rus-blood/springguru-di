@@ -1,16 +1,15 @@
 package ru.guru.di.services;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service("i18n")
-@Profile("EN")
-public class EnglishHelloServiceImpl implements HelloService {
+@Profile("RU")
+public class RussianHelloServiceImpl implements HelloService {
 
     String suffix;
 
-    public EnglishHelloServiceImpl() {
+    public RussianHelloServiceImpl() {
         this.suffix = "";
     }
 
@@ -19,7 +18,7 @@ public class EnglishHelloServiceImpl implements HelloService {
         String text = suffix;
         if (!text.equals(""))
             text += ": ";
-        return text + "Hello, World! (English)";
+        return text + "Привет! (Russian)";
     }
 
     @Override
