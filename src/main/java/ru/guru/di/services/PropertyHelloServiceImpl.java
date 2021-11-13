@@ -16,7 +16,7 @@ public class PropertyHelloServiceImpl implements HelloService {
         String text = suffix;
         if (!text.equals(""))
             text += ": ";
-        return text + "Hello, World!";
+        return text + "Hello, World! (Property)";
     }
 
     @Override

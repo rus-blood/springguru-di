@@ -1,13 +1,15 @@
 package ru.guru.di.services;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ConstructorHelloServiceImpl implements HelloService {
+@Primary
+public class PrimaryHelloServiceImpl implements HelloService {
 
     String suffix;
 
-    public ConstructorHelloServiceImpl() {
+    public PrimaryHelloServiceImpl() {
         this.suffix = "";
     }
 
@@ -16,7 +18,7 @@ public class ConstructorHelloServiceImpl implements HelloService {
         String text = suffix;
         if (!text.equals(""))
             text += ": ";
-        return text + "Hello, World! (Constructor)";
+        return text + "Hello, World! (Primary)";
     }
 
     @Override
